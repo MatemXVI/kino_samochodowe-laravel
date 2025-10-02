@@ -1,0 +1,681 @@
+body {
+    text-align: center;
+    font-family: Open Sans;
+    margin: 0;
+    background-color: hsl(34, 76%, 89%);
+}
+
+/* Nagłówek */
+
+header {
+    background-color: black;
+    color: white;
+    height: 170px;
+}
+
+#logged {
+    height: 40px;
+    float: right;
+}
+
+#logged ul {
+    list-style: none;
+    margin: 0;
+    font-size: 20px;
+}
+
+#logged ul li {
+    display: inline-block;
+}
+
+header h1 {
+    clear: both;
+    font-size: 45px;
+    margin-top: 0;
+}
+
+/* Pasek nawigacji */
+
+nav {
+    background-color: #222222;
+}
+
+nav a {
+    color: olive;
+    word-spacing: 3px;
+    font-size: 26px;
+    border-right: 2px solid black;
+    padding: 2px 12px;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: yellow;
+    cursor: pointer;
+}
+
+nav a:first-child {
+    border-left: 2px solid black;
+}
+
+.navbar {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-weight: 350;
+}
+
+.menu {
+    float: left;
+    margin-right: 50px;
+}
+
+.wybor,
+.wybor1 {
+    float: left;
+}
+
+.wybor select,
+.wybor1 select,
+#wybor_miejsca select {
+    height: 40px;
+}
+
+.wybor1 {
+    margin-left: 261px;
+    margin-right: 50px;
+}
+
+
+/* Pasek z lewej strony */
+
+aside {
+    float: left;
+    position: absolute;
+    margin-left: 100px;
+}
+
+/* Sekcja główna */
+
+section {
+    margin: 20px 0;
+    min-height: 610px;
+    font-size: 25px;
+    color: black;
+}
+
+/* Stopka */
+
+footer {
+    background-color: black;
+    color: white;
+    margin: 0 auto;
+    height: 175px;
+}
+
+footer ul {
+    float: left;
+    list-style: none;
+    padding: 25px;
+    padding-left: 200px;
+    font-size: 20px;
+}
+
+/* Donyślne przyciski */
+
+section a {
+    color: black;
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover,
+button.przycisk:hover {
+    color: grey;
+    cursor: pointer;
+}
+
+
+/* Repertuar, seanse */
+
+
+.tydzien {
+    text-align: center;
+    font-size: 21px;
+    margin-bottom: 40px;
+}
+
+.dni ul {
+    list-style: none;
+    display: inline-block;
+}
+
+.dni li {
+    padding: 2px;
+}
+
+.dzien {
+    display: inline-block;
+    width: 64px;
+    border: 2px solid #ff4e19;
+    background-color: #ffb6a0;
+    font-size: 23px;
+}
+
+.data {
+    display: inline-block;
+}
+
+.dzien:hover {
+    background-color: #fc9070;
+}
+
+.all {
+    margin-top: 15px;
+}
+
+.przycisk {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 23px;
+}
+
+
+.movies {
+    text-align: left;
+    margin-left: 50px;
+}
+
+.krotki_opis {
+    font-size: 15px;
+    color: grey;
+    margin-bottom: 20px;
+}
+
+.godzina {
+    text-align: left;
+    display: inline-block;
+}
+
+.dodatkowe {
+    font-size: 10px;
+}
+
+.linia_repertuaru {
+    margin-bottom: 45px;
+}
+
+.repertuar {
+    float: left;
+    width: 32%;
+    margin-left: 10px;
+}
+
+.linia {
+    margin-bottom: 10px;
+}
+
+.tytul {
+    margin-top: 0;
+}
+
+/* Film */
+
+#plakat {
+    float: left;
+    margin-left: 25px;
+    margin-right: 15px;
+    margin-top: 50px;
+}
+
+#description {
+    font-size: 20px;
+    width: 75%;
+    float: left;
+}
+
+#zdjecia {
+    margin-top: 50px;
+    text-align: left;
+}
+
+.zdjecie {
+    float: left;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+/* Seans */
+
+
+#zdjecie_seansu {
+    margin-bottom: 50px;
+}
+
+#description_seans {
+    font-size: 20px;
+
+}
+
+
+/* Miejsce */
+
+#informacje_miejsce {
+    margin-top: 100px;
+}
+
+
+#opis {
+    margin-bottom: 20px;
+}
+
+/* User */
+
+
+.ustawienia_user {
+    width: 750px;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 100px;
+}
+
+/* Miejsca parkingowe */
+
+#parking td {
+    border: 1px solid;
+    padding: 12px 2px;
+    text-align: center;
+}
+
+#parking td.rzad {
+    border: 0;
+    padding: 0 25px;
+}
+
+#parking td.puste {
+    border: 0;
+    padding: 12px 2px;
+}
+
+/*Płatność */
+
+#platnosc {
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
+#platnosc td {
+    border: grey 1px solid;
+    border-spacing: 15px;
+    font-family: Open Sans;
+    font-size: 25px;
+    font-weight: normal;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    background-color: white;
+}
+
+#platnosc label {
+    margin-right: 20px;
+}
+
+#platnosc img {
+    position: relative;
+    float: right;
+}
+
+/*Podsumowanie */
+
+#podsumowanie {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.pods {
+    text-align: left;
+}
+
+
+/* Menu */
+
+#menu {
+    text-transform: uppercase;
+}
+
+#menu h1 {
+    padding: 10px 0;
+}
+
+#menu a {
+    line-height: 60px;
+    font-size: 30px;
+}
+
+/* Formularz i pola */
+
+input,
+textarea,
+select {
+    box-sizing: content-box !important;
+}
+
+.formularz {
+    margin-bottom: 45px;
+}
+
+.przycisk_formularz {
+    margin-top: 40px;
+}
+
+.pole_formularza {
+    margin-bottom: 25px;
+}
+
+.pole_formularza_maly_odstep {
+    margin-bottom: 10px;
+}
+
+form {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+form td {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.inline-form {
+    display: inline;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=number],
+input[type=date],
+input[type=time],
+textarea,
+select {
+    border: 2px solid;
+    height: 25px;
+    width: 300px;
+    font-size: 15px;
+}
+
+input[type=number] {
+    width: 60px;
+}
+
+input[type=submit] {
+    font-size: 30px;
+    padding: 8px 16px;
+    border: 2px solid yellow;
+    border-color: yellow;
+    color: yellow;
+    background-color: red;
+    text-decoration: none;
+    text-align: center;
+}
+
+input[type=submit]:hover {
+    color: olive;
+    cursor: pointer;
+}
+
+label[for=regulamin] {
+    font-family: Open Sans;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+textarea {
+    height: 100px;
+}
+
+.data_pasek input[type=date] {
+    width: 120px;
+    cursor: pointer;
+    border: 2px solid #ff4e19;
+    background-color: #ffb6a0;
+    color: black;
+}
+
+.data_pasek input[type=date]:disabled {
+    background-color: #ffb6a02c;
+    border: 2px solid #ff4f1938;
+    color: grey;
+}
+
+.data_pasek:hover {
+    cursor: pointer;
+}
+
+.select_index {
+    background-color: #202050;
+    font-size: 21px;
+    color: #92A0AD;
+    border: 0;
+    border-left: 1px solid #212126;
+    border-right: 1px solid #212126;
+    cursor: pointer;
+    width: 350px;
+}
+
+select:active {
+    border: 0;
+}
+
+
+/* Tabela */
+
+
+table {
+    text-align: left;
+}
+
+table td {
+    padding: 0 12px;
+}
+
+/* Lista */
+
+.lista {
+    width: 75%;
+}
+
+.lista td,
+.lista th {
+    padding: 12px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+p.dodaj {
+    font-size: 30px;
+}
+
+
+/*Pliki */
+
+.plik_formularz {
+    margin-top: 20px;
+    text-align: left;
+    margin-left: 750px;
+}
+
+.nazwa_pliku {
+    margin-bottom: 20px;
+}
+
+.plik {
+    float: left;
+}
+
+.przycisk_zmiany {
+    float: left;
+    margin-left: 10px;
+}
+
+/* Bilet (wersja próbna) */
+
+/* #bilet{
+	width:30%;
+	margin: 0 auto;
+	background-color: white;
+	min-height:880px;
+	font-size:24px;
+}
+
+#wrapper_margin{
+	padding:20px;
+	padding-bottom:20px;
+}
+
+#wrapper{
+	border: 3px dashed orange;
+	padding-bottom:10px;
+}
+
+#logo{
+	padding-top:20px;
+	font-size: 40px;
+	color:indigo;
+} */
+
+
+/*Bilet */
+
+#bilet {
+    width: 60%;
+    margin: 0 auto;
+    background-color: white;
+    height: 510px;
+    font-size: 22px;
+    color: black;
+}
+
+#left-side {
+    float: left;
+    width: 15%;
+    background-color: #005db4;
+    height: 100%;
+}
+
+#logo {
+    float: left;
+    font-size: 40px;
+    color: white;
+    width: 500px;
+    transform: rotate(-90deg);
+    position: relative;
+    right: 175px;
+    top: 225px;
+}
+
+#main-information {
+    float: left;
+    margin-top: 10px;
+    margin-left: 15px;
+    text-align: left;
+    width: 550px;
+}
+
+#id-biletu {
+    text-align: right;
+}
+
+#screening-information {
+    font-style: italic;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#main-information p {
+    font-size: 30px;
+}
+
+#rest-information {
+    margin-bottom: 30px;
+}
+
+#name {
+    height: 85px;
+    font-size: 30px;
+}
+
+#announcement {
+    height: 90px;
+    color: #3f3f3f;
+}
+
+#price {
+    text-align: right;
+    font-size: 27px;
+}
+
+#top-right-side {
+    background-color: #ac0303;
+    height: 50%;
+    width: 35%;
+    float: right;
+}
+
+#bottom-right-side {
+    height: 50%;
+    width: 35%;
+    float: right;
+}
+
+
+/* Komunikaty */
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.information {
+    font-weight: bold;
+}
+
+.success {
+    color: green;
+    font-weight: bold;
+}
+
+/* Bilety */
+
+.bilety_kolumna {
+    float: left;
+    margin-right: 50px;
+}
+
+#bilety {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.numer_biletu {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* Paginator */
+
+.paginator {
+    margin-left: 20px;
+}
