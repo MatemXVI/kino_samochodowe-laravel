@@ -7,6 +7,7 @@ use App\Models\Ticket;
 use Illuminate\Http\Request;
 use chillerlan\QRCode\QRCode;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class BuyTicketController extends Controller
 {
@@ -52,11 +53,15 @@ class BuyTicketController extends Controller
             return redirect()->route("login")->with("message", "Musisz się zalogować, aby móc kupić bilet.");
         $parkingSpotNumber = $request->input("parking_spot_number");
         $screeningId = $request->input("screening_id");
-        $ticket = Ticket::with(["screening.film", "screening.venue"])->where("parking_spot_number", $parkingSpotNumber)->where("screening_id", $screeningId)->whereNull("user_id")->firstOrFail();
-        $ticket->user_id = Auth::user()->id;
-        $ticket->created_at = now();
-        $ticket->save();
-        return redirect()->route("ticket.show", $ticket->id)->with("message","Bilet został zakupiony. Pamiętaj, że tylko z nim możesz wejść na seans. Zeskanuj kod QR przy wjeździe na parking. Życzymy miłego oglądania");
+        $ticketId = DB::transaction(function () use ($screeningId, $parkingSpotNumber) {
+            $ticket = Ticket::where("screening_id", $screeningId)->where("parking_spot_number", $parkingSpotNumber)->whereNull("user_id")->lockForUpdate()
+            ->firstOrFail();
+            $ticket->user_id = Auth::id();
+            $ticket->created_at = now();
+            $ticket->save();
+            return $ticket->id;
+        });
+        return redirect()->route("ticket.show", $ticketId)->with("message","Bilet został zakupiony. Pamiętaj, że tylko z nim możesz wejść na seans. Zeskanuj kod QR przy wjeździe na parking. Życzymy miłego oglądania");
     }
 
 }
