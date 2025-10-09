@@ -86,9 +86,6 @@ class UserController extends Controller
 
     //formularz edycji użytkownika i hasła
     public function edit(){
-        if(!Auth::check()){
-            return redirect('/');
-        }
         $user = Auth::user();
         return view("user.edit", compact("user"));
     }

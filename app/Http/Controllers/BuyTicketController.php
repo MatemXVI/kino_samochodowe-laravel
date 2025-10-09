@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Screening;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
-use chillerlan\QRCode\QRCode;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 

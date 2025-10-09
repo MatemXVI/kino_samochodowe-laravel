@@ -46,6 +46,7 @@
     <button type="submit" class="przycisk" onclick="return confirm('Czy na pewno chcesz usunąć bilet?')"><b>USUŃ BILET</b></button><br>
     </form>
     @endif
+    <a href="{{ route('ticket.pdf', $ticket->id) }}" class="przycisk" target="_blank"><b>POBIERZ PDF</b></a>
     @if (session('message'))
         <span class="success">{{ session('message') }}</span>
     @endif

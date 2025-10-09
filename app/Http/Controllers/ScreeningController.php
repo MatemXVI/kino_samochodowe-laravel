@@ -26,7 +26,7 @@ class ScreeningController extends Controller
         //pasek select z filmami
         if($filmId){
             $films = Film::whereNot("id", $filmId)->orderBy("title")->get();
-            $selectedFilm = Film::find($filmId);
+            $selectedFilm = Film::findOrFail($filmId);
         }else{
             $films = Film::orderby("title")->get();
             $selectedFilm = null;
@@ -35,7 +35,7 @@ class ScreeningController extends Controller
         //pasek select z miejscami
         if($venueId){
             $venues = Venue::whereNot("id", $venueId)->orderBy("city")->get();
-            $selectedVenue = Venue::find($venueId);
+            $selectedVenue = Venue::findOrFail($venueId);
         }else{
             $venues = Venue::orderby("city")->get();
             $selectedVenue = null;

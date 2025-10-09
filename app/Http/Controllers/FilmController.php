@@ -32,13 +32,13 @@ class FilmController extends Controller
         // pasek select z miejscami
         if ($venueId) {
             $venues = Venue::whereNot('id', $venueId)->orderBy('city')->get();
-            $selectedVenue = Venue::find($venueId);
+            $selectedVenue = Venue::findOrFail($venueId);
         } else {
             $venues = Venue::orderBy('city')->get();
             $selectedVenue = null;
         }
         // wszystkie miejsca(nie wybrano miejsca seansu)
-        if (! $venueId || $selectedVenue === null) {
+        if (!$venueId || $selectedVenue === null) {
             if ($date) {
                 $films = $queryFilms->where('date', $date)->orderBy('date')->get();
                 foreach ($films as $film) {
