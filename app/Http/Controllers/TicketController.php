@@ -4,27 +4,34 @@ namespace App\Http\Controllers;
 
 use App\Models\Ticket;
 use chillerlan\QRCode\QRCode;
-use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Auth;
 
 class TicketController extends Controller
 {
     public function index(){
-        $tickets = Ticket::where("user_id",Auth::user()->id)->get();
+        $tickets = Ticket::where("user_id",Auth::id())->get();
         return view("user.tickets", compact("tickets"));
     }
 
     public function show(Ticket $ticket){
-        if(!Auth::check())
-            return redirect('/');
         if (is_null($ticket->user_id) || $ticket->user_id !== Auth::id()) {
             abort(403, 'Nie masz dostępu do tego biletu.');
         }
         $ticket->load(['screening.film', 'screening.venue', 'user']);
-        $dataQR = $ticket->dataQR();
-        $qrcode = (new QRCode)->render($dataQR);
+        $qrcode = (new QRCode)->render($ticket->dataQR());
         return view("ticket.show", compact("ticket", "qrcode"));
      }
+
+    public function downloadPDF(Ticket $ticket){
+        if (!Auth::check() || (Auth::id() !== $ticket->user_id)) {
+            abort(403, 'Nie masz dostępu do tego biletu.');
+        }
+        $ticket->load(['screening.film', 'screening.venue', 'user']);
+        $qrcode = (new QRCode)->render($ticket->dataQR());
+        $pdf = PDF::loadView('ticket.pdf', compact('ticket', 'qrcode'));
+        return $pdf->download('bilet-' . $ticket->id . '.pdf');
+    }
 
     public function destroy(Ticket $ticket){
         if ($ticket->user_id !== Auth::id()) {

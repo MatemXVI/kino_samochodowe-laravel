@@ -39,7 +39,6 @@ Route::middleware('guest')->group(function () {
 
 });
 
-Route::get('/tickets/{ticket}', [TicketController::class, 'show'])->name('ticket.show');
 
 //zakup biletu, panel użytkownika
 Route::middleware(['role:user'])->group(function () {
@@ -52,6 +51,9 @@ Route::middleware(['role:user'])->group(function () {
     //podgląd biletów
     Route::get('user/tickets', [TicketController::class, 'index'])->name('user.tickets.index');
     Route::delete('user/tickets/{ticket}', [TicketController::class, 'destroy'])->name('user.tickets.destroy');
+    //bilet
+    Route::get('/tickets/{ticket}', [TicketController::class, 'show'])->name('ticket.show');
+    Route::get('tickets/{ticket}/pdf', [TicketController::class, 'downloadPDF'])->name('ticket.pdf');
 
     //user
     Route::get('user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');

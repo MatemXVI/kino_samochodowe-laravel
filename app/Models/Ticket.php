@@ -20,8 +20,7 @@ class Ticket extends Model
         return implode(' ', [
             $this->id,
             $this->screening_id,
-            $this->parking_spot_number,
-            $this->user_id
+            $this->parking_spot_number
         ]);
     }
 

@@ -47,9 +47,7 @@ class ScreeningsController extends Controller
         $screening = Screening::with(['venue'])->where("id", $id)->first();
         $parking_spot_count = $screening->venue->parking_spot_count;
         for($i=1; $i<=$parking_spot_count; $i++){
-            Ticket::create(['parking_spot_number' => $i,
-                                       'screening_id' => $screening->id
-                                       ]);
+            Ticket::create(['parking_spot_number' => $i, 'screening_id' => $screening->id]);
         }
 
         return redirect(route("admin.screenings.index"))->with('message', "Seans został dodany do bazy.");

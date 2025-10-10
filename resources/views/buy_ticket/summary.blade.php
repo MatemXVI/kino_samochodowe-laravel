@@ -26,12 +26,12 @@
 				<div>Metoda płatności: <b>{{ $payment }}</b></div>
 			</div>
 		</div><br>
-		<form action={{ route("ticket.generate") }} method="post">
+		<form action="{{ route('ticket.generate') }}" method="post">
             @csrf
             @method("PATCH")
-            <input type="hidden" name="screening_id" value={{ $screeningId }}>
-            <input type="hidden" name="parking_spot_number" value= {{ $parkingSpotNumber }} >
-            <input type="hidden" name="price" value={{ $ticket->screening->price }} >
+            <input type="hidden" name="screening_id" value="{{ $screeningId }}">
+            <input type="hidden" name="parking_spot_number" value="{{ $parkingSpotNumber }}">
+            <input type="hidden" name="price" value="{{ $ticket->screening->price }}">
             <input type="submit" value="Zakup bilet">
 		</form>
 

@@ -33,7 +33,7 @@
             </div>
         </div>
         <div id="top-right-side">
-            <img src = {{ Storage::url("img/ticket/car.png") }} height="200" width="400">
+            <img src="{{ Storage::url('img/ticket/car.png') }}" height="200" width="400">
         </div>
         <div id="bottom-right-side">
             <img src="{{ $qrcode }}" height="250" width="250">
