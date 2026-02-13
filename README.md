@@ -22,6 +22,6 @@ Technologie:
 
 Pierwsza wersja - aplikacja w czystym PHP: https://github.com/MatemXVI/kino_samochodowe
 
-Opis interfejsu graficznego: https://github.com/MatemXVI/kino-samochodowe-laravel/blob/main/Interfejs%20graficzny.pdf
+Opis interfejsu graficznego: https://github.com/MatemXVI/kino-samochodowe-laravel/blob/main/Interfejs_graficzny.pdf
 W projekcie skupiałem się głównie na backendzie, frontend jest głównie w celu pokazania układu pól, przycisków, zdjęć itd.
 Aplikacja będzie dalej rozwijana, planowane jest dodanie możliwości pobrania biletu w PDF i formacie graficznym JPG/PNG. Planowane też jest przerobienie interfejsu graficznego.
